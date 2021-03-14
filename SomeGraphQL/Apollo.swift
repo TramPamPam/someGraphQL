@@ -17,12 +17,15 @@ final class Network {
 
     private lazy var apollo = ApolloClient(url: url)
 
-    func fetchNativeAndEmoji(completion: @escaping ((UkraineQuery.Data?) -> Void)) {
+    func fetchNativeAndEmoji(completion: @escaping ((CountryModel?) -> Void)) {
         apollo.fetch(query: UkraineQuery()) { result in
             switch (result) {
             case .success(let value):
-                completion(value.data)
-            case .failure(_):
+                let name = value.data?.country?.native ?? ""
+                let emoji = value.data?.country?.emoji ?? ""
+                completion(CountryModel(nameNative: name, emoji: emoji))
+            case .failure(let error):
+                print(error)
                 completion(nil)
             }
         }

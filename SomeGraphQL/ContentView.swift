@@ -6,23 +6,45 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
-    @State var countryNativeName = ""
+    let publisher = CountryPublisher()
 
-    @State var countryEmoji = ""
+    @State var model: CountryModel = .empty
 
     var body: some View {
-        Text("Hello from \(countryNativeName) (\(countryEmoji))!")
-            .padding().onAppear(perform: {
-                Network.shared.fetchNativeAndEmoji { (data) in
-                    if let result = data?.country {
-                        countryEmoji = result.emoji
-                        countryNativeName = result.native
-                    }
-                }
+        Text("Hello from \(model.nameNative) (\(model.emoji))!")
+            .padding()
+            .onAppear(perform: {
+                publisher.receive(subscriber: self)
             })
     }
+}
+
+extension ContentView: Subscriber {
+
+    typealias Input = CountryModel
+
+    typealias Failure = Never
+
+    var combineIdentifier: CombineIdentifier {
+        CombineIdentifier()
+    }
+
+    func receive(subscription: Subscription) {
+        print(#function)
+    }
+
+    func receive(_ input: CountryModel) -> Subscribers.Demand {
+        model = input
+        return Subscribers.Demand.unlimited
+    }
+
+    func receive(completion: Subscribers.Completion<Never>) {
+        print(#function)
+    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {

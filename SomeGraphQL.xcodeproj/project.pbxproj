@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A563E51725FE56C80038F228 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A563E51625FE56C80038F228 /* CountryModel.swift */; };
+		A563E51B25FE56F30038F228 /* CountryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A563E51A25FE56F20038F228 /* CountryPublisher.swift */; };
 		A5863DEE25FCDBEE007BE5B5 /* SomeGraphQLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5863DED25FCDBEE007BE5B5 /* SomeGraphQLApp.swift */; };
 		A5863DF025FCDBEE007BE5B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5863DEF25FCDBEE007BE5B5 /* ContentView.swift */; };
 		A5863DF225FCDBEF007BE5B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5863DF125FCDBEF007BE5B5 /* Assets.xcassets */; };
@@ -55,6 +57,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A563E51625FE56C80038F228 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		A563E51A25FE56F20038F228 /* CountryPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPublisher.swift; sourceTree = "<group>"; };
 		A5863DEA25FCDBEE007BE5B5 /* SomeGraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomeGraphQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5863DED25FCDBEE007BE5B5 /* SomeGraphQLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeGraphQLApp.swift; sourceTree = "<group>"; };
 		A5863DEF25FCDBEE007BE5B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A563E51525FE56AF0038F228 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				A5863DEF25FCDBEE007BE5B5 /* ContentView.swift */,
+				A563E51625FE56C80038F228 /* CountryModel.swift */,
+				A563E51A25FE56F20038F228 /* CountryPublisher.swift */,
+			);
+			name = Content;
+			sourceTree = "<group>";
+		};
 		A5863DE125FCDBEE007BE5B5 = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +143,7 @@
 				A5863E4625FCE37A007BE5B5 /* API.swift */,
 				A5863E2C25FCE03B007BE5B5 /* schema.json */,
 				A5863DF625FCDBEF007BE5B5 /* Info.plist */,
-				A5863DEF25FCDBEE007BE5B5 /* ContentView.swift */,
+				A563E51525FE56AF0038F228 /* Content */,
 				A5863DF125FCDBEF007BE5B5 /* Assets.xcassets */,
 				A5863E4025FCE25B007BE5B5 /* GraphQL */,
 				A5863DF325FCDBEF007BE5B5 /* Preview Content */,
@@ -341,6 +355,8 @@
 				A5863E3125FCE0A6007BE5B5 /* Apollo.swift in Sources */,
 				A5863E4725FCE37A007BE5B5 /* API.swift in Sources */,
 				A5863DEE25FCDBEE007BE5B5 /* SomeGraphQLApp.swift in Sources */,
+				A563E51725FE56C80038F228 /* CountryModel.swift in Sources */,
+				A563E51B25FE56F30038F228 /* CountryPublisher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
