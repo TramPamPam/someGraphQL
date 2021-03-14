@@ -1,0 +1,9 @@
+query Ukraine {
+  country(code: "UA") {
+    name
+    native
+    capital
+    emoji
+  }
+}
+
