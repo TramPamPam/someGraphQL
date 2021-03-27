@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A563E51725FE56C80038F228 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A563E51625FE56C80038F228 /* CountryModel.swift */; };
 		A5863DEE25FCDBEE007BE5B5 /* SomeGraphQLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5863DED25FCDBEE007BE5B5 /* SomeGraphQLApp.swift */; };
 		A5863DF025FCDBEE007BE5B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5863DEF25FCDBEE007BE5B5 /* ContentView.swift */; };
 		A5863DF225FCDBEF007BE5B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5863DF125FCDBEF007BE5B5 /* Assets.xcassets */; };
@@ -19,10 +18,12 @@
 		A5863E2125FCDC79007BE5B5 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = A5863E2025FCDC79007BE5B5 /* ApolloWebSocket */; };
 		A5863E2325FCDC79007BE5B5 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = A5863E2225FCDC79007BE5B5 /* Apollo */; };
 		A5863E2825FCDC79007BE5B5 /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = A5863E2725FCDC79007BE5B5 /* ApolloCodegenLib */; };
-		A5863E2D25FCE03B007BE5B5 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = A5863E2C25FCE03B007BE5B5 /* schema.json */; };
-		A5863E3125FCE0A6007BE5B5 /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5863E3025FCE0A6007BE5B5 /* Apollo.swift */; };
-		A5863E3D25FCE1A1007BE5B5 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A5863E3C25FCE1A1007BE5B5 /* Queries.graphql */; };
-		A5863E4725FCE37A007BE5B5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5863E4625FCE37A007BE5B5 /* API.swift */; };
+		A5863E3125FCE0A6007BE5B5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5863E3025FCE0A6007BE5B5 /* Network.swift */; };
+		A5A5AB98260F4D4000B17614 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = A5A5AB97260F4D4000B17614 /* schema.json */; };
+		A5A5AB9C260F4D8A00B17614 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A5A5AB9B260F4D8A00B17614 /* Queries.graphql */; };
+		A5A5ABA2260F4E7600B17614 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ABA1260F4E7600B17614 /* API.swift */; };
+		A5A5ABAD260F658D00B17614 /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ABAC260F658D00B17614 /* Interceptor.swift */; };
+		A5A5ABBF260F688500B17614 /* ignore_it.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A5ABBE260F688500B17614 /* ignore_it.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A563E51625FE56C80038F228 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		A5863DEA25FCDBEE007BE5B5 /* SomeGraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomeGraphQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5863DED25FCDBEE007BE5B5 /* SomeGraphQLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeGraphQLApp.swift; sourceTree = "<group>"; };
 		A5863DEF25FCDBEE007BE5B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,10 +69,12 @@
 		A5863E0625FCDBEF007BE5B5 /* SomeGraphQLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomeGraphQLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5863E0A25FCDBEF007BE5B5 /* SomeGraphQLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeGraphQLUITests.swift; sourceTree = "<group>"; };
 		A5863E0C25FCDBEF007BE5B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5863E2C25FCE03B007BE5B5 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
-		A5863E3025FCE0A6007BE5B5 /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
-		A5863E3C25FCE1A1007BE5B5 /* Queries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
-		A5863E4625FCE37A007BE5B5 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		A5863E3025FCE0A6007BE5B5 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A5A5AB97260F4D4000B17614 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		A5A5AB9B260F4D8A00B17614 /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
+		A5A5ABA1260F4E7600B17614 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		A5A5ABAC260F658D00B17614 /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
+		A5A5ABBE260F688500B17614 /* ignore_it.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ignore_it.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				A5863DEF25FCDBEE007BE5B5 /* ContentView.swift */,
-				A563E51625FE56C80038F228 /* CountryModel.swift */,
 			);
 			name = Content;
 			sourceTree = "<group>";
@@ -137,11 +138,12 @@
 		A5863DEC25FCDBEE007BE5B5 /* SomeGraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				A5863E4625FCE37A007BE5B5 /* API.swift */,
-				A5863E2C25FCE03B007BE5B5 /* schema.json */,
+				A5A5AB97260F4D4000B17614 /* schema.json */,
 				A5863DF625FCDBEF007BE5B5 /* Info.plist */,
-				A563E51525FE56AF0038F228 /* Content */,
+				A5A5ABA1260F4E7600B17614 /* API.swift */,
+				A5A5ABBE260F688500B17614 /* ignore_it.swift */,
 				A5863DF125FCDBEF007BE5B5 /* Assets.xcassets */,
+				A563E51525FE56AF0038F228 /* Content */,
 				A5863E4025FCE25B007BE5B5 /* GraphQL */,
 				A5863DF325FCDBEF007BE5B5 /* Preview Content */,
 			);
@@ -177,9 +179,10 @@
 		A5863E4025FCE25B007BE5B5 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				A5863E3C25FCE1A1007BE5B5 /* Queries.graphql */,
 				A5863DED25FCDBEE007BE5B5 /* SomeGraphQLApp.swift */,
-				A5863E3025FCE0A6007BE5B5 /* Apollo.swift */,
+				A5863E3025FCE0A6007BE5B5 /* Network.swift */,
+				A5A5AB9B260F4D8A00B17614 /* Queries.graphql */,
+				A5A5ABAC260F658D00B17614 /* Interceptor.swift */,
 			);
 			name = GraphQL;
 			sourceTree = "<group>";
@@ -299,9 +302,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A5AB9C260F4D8A00B17614 /* Queries.graphql in Resources */,
 				A5863DF525FCDBEF007BE5B5 /* Preview Assets.xcassets in Resources */,
-				A5863E2D25FCE03B007BE5B5 /* schema.json in Resources */,
-				A5863E3D25FCE1A1007BE5B5 /* Queries.graphql in Resources */,
+				A5A5AB98260F4D4000B17614 /* schema.json in Resources */,
 				A5863DF225FCDBEF007BE5B5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,10 +352,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5863DF025FCDBEE007BE5B5 /* ContentView.swift in Sources */,
-				A5863E3125FCE0A6007BE5B5 /* Apollo.swift in Sources */,
-				A5863E4725FCE37A007BE5B5 /* API.swift in Sources */,
+				A5863E3125FCE0A6007BE5B5 /* Network.swift in Sources */,
+				A5A5ABAD260F658D00B17614 /* Interceptor.swift in Sources */,
 				A5863DEE25FCDBEE007BE5B5 /* SomeGraphQLApp.swift in Sources */,
-				A563E51725FE56C80038F228 /* CountryModel.swift in Sources */,
+				A5A5ABBF260F688500B17614 /* ignore_it.swift in Sources */,
+				A5A5ABA2260F4E7600B17614 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
