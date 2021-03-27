@@ -15,6 +15,7 @@ public final class UkraineQuery: GraphQLQuery {
         native
         capital
         emoji
+        code
       }
     }
     """
@@ -62,6 +63,7 @@ public final class UkraineQuery: GraphQLQuery {
           GraphQLField("native", type: .nonNull(.scalar(String.self))),
           GraphQLField("capital", type: .scalar(String.self)),
           GraphQLField("emoji", type: .nonNull(.scalar(String.self))),
+          GraphQLField("code", type: .nonNull(.scalar(GraphQLID.self))),
         ]
       }
 
@@ -71,8 +73,8 @@ public final class UkraineQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(name: String, native: String, capital: String? = nil, emoji: String) {
-        self.init(unsafeResultMap: ["__typename": "Country", "name": name, "native": native, "capital": capital, "emoji": emoji])
+      public init(name: String, native: String, capital: String? = nil, emoji: String, code: GraphQLID) {
+        self.init(unsafeResultMap: ["__typename": "Country", "name": name, "native": native, "capital": capital, "emoji": emoji, "code": code])
       }
 
       public var __typename: String {
@@ -117,6 +119,15 @@ public final class UkraineQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "emoji")
+        }
+      }
+
+      public var code: GraphQLID {
+        get {
+          return resultMap["code"]! as! GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "code")
         }
       }
     }

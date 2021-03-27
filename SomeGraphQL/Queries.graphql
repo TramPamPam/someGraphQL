@@ -4,6 +4,7 @@ query Ukraine {
     native
     capital
     emoji
+	code	
   }
 }
 

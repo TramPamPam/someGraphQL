@@ -8,8 +8,10 @@
 import SwiftUI
 import Combine
 
+//??
+var cancellables: Set<AnyCancellable> = []
+
 struct ContentView: View {
-    let publisher = CountryPublisher()
 
     @State var model: CountryModel = .empty
 
@@ -17,34 +19,18 @@ struct ContentView: View {
         Text("Hello from \(model.nameNative) (\(model.emoji))!")
             .padding()
             .onAppear(perform: {
-                publisher.receive(subscriber: self)
+                Network
+                    .shared
+                    .fetchNativeAndEmoji()
+                    .sink { (completion) in
+                        print(completion)
+                    } receiveValue: { (country) in
+                        print(country)
+                        model = country
+                    }
+                    .store(in: &cancellables)
             })
     }
-}
-
-extension ContentView: Subscriber {
-
-    typealias Input = CountryModel
-
-    typealias Failure = Never
-
-    var combineIdentifier: CombineIdentifier {
-        CombineIdentifier()
-    }
-
-    func receive(subscription: Subscription) {
-        print(#function)
-    }
-
-    func receive(_ input: CountryModel) -> Subscribers.Demand {
-        model = input
-        return Subscribers.Demand.unlimited
-    }
-
-    func receive(completion: Subscribers.Completion<Never>) {
-        print(#function)
-    }
-
 }
 
 struct ContentView_Previews: PreviewProvider {
