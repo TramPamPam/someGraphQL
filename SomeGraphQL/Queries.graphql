@@ -1,10 +1,39 @@
-query Ukraine {
-  country(code: "UA") {
-    name
-    native
-    capital
-    emoji
-	code	
-  }
+
+query SearchRepos($searchText: String!) {
+	search(first: 1, query: $searchText, type: REPOSITORY) {
+		nodes {
+			... on Repository {
+				...RepositoryDetail
+			}
+		}
+	}
 }
 
+mutation AddStar($repositoryId: ID!) {
+	addStar(input: {clientMutationId: "2277541", starrableId: $repositoryId}) {
+		starrable {
+			... on Repository {
+			   ...RepositoryDetail
+			}
+		}
+	}
+}
+
+mutation RemoveStar($repositoryId: ID!) {
+	removeStar(input: {clientMutationId: "2277541", starrableId: $repositoryId}) {
+		starrable {
+			... on Repository {
+				...RepositoryDetail
+			}
+		}
+	}
+}
+
+fragment RepositoryDetail on Repository {
+	id
+	nameWithOwner
+	viewerHasStarred
+	stargazers {
+		totalCount
+	}
+}

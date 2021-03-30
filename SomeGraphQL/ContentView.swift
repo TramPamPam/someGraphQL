@@ -13,23 +13,50 @@ var cancellables: Set<AnyCancellable> = []
 
 struct ContentView: View {
 
-    @State var model: CountryModel = .empty
+    @State var repos: String = ""
 
     var body: some View {
-        Text("Hello from \(model.nameNative) (\(model.emoji))!")
-            .padding()
-            .onAppear(perform: {
-                Network
-                    .shared
-                    .fetchNativeAndEmoji()
-                    .sink { (completion) in
-                        print(completion)
-                    } receiveValue: { (country) in
-                        print(country)
-                        model = country
-                    }
-                    .store(in: &cancellables)
-            })
+        VStack {
+            Text("Repos \(repos)")
+                .padding()
+            HStack {
+                Button("star") {
+                    Network
+                        .shared
+                        .addStar()
+                        .sink { (completion) in
+                            print(completion)
+                        } receiveValue: { (value) in
+                            repos = "fav \(value.id) \(value.nameWithOwner) \(value.viewerHasStarred)"
+
+                        }.store(in: &cancellables)
+
+                }
+                Button("unstar") {
+                    Network
+                        .shared
+                        .removeStar()
+                        .sink { (completion) in
+                            print(completion)
+                        } receiveValue: { (value) in
+                            repos = "unfav \(value.id) \(value.nameWithOwner) \(value.viewerHasStarred)"
+
+                        }.store(in: &cancellables)
+                }
+            }
+        }
+        .onAppear(perform: {
+            Network
+                .shared
+                .fetchRepos(Const.thisRepoName)
+                .sink { (completion) in
+                    print(completion)
+                } receiveValue: { (value) in
+                    print(value)
+                    repos = "ok \(value.id) \(value.nameWithOwner) \(value.viewerHasStarred)"
+                }
+                .store(in: &cancellables)
+        })
     }
 }
 
